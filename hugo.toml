@@ -2,6 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Ed Roberts Rayne'
 sectionPagesMenu = 'main'
+enableEmoji = true
 
 [module]
   [module.hugoVersion]
