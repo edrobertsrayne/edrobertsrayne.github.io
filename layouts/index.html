@@ -2,11 +2,13 @@
 
 <div class="hero min-h-96 bg-base-300">
   <div class="hero-content text-center">
-    <div class="max-w-md">
+    <div class="max-w-lg">
       <h1 class="text-5xl font-bold">{{ .Params.title | markdownify }}</h1>
-      <p class="py-12">{{ .Params.content | markdownify }}</p>
+      <p class="py-12 text-lg">{{ .Params.content | markdownify }}</p>
       {{ range .Params.buttons }}
-      <a href="{{ .link }}" class="mx-4 btn btn-primary">{{ .label }}</a>
+      <a href="{{ .link }}" class="text-xl mx-4 btn btn-primary"
+        >{{ .label }}</a
+      >
       {{ end }}
     </div>
   </div>

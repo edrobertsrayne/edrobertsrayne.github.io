@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width" />
 <meta name="description" content="{{ .Description }}" />
 
-<title>{{ print .Page.Title }}</title>
+<title>{{ block "title" . }}{{ .Page.Title }}{{ end }}</title>
 
 {{/* styles */}} {{ $options := dict "inlineImports" true }} {{ $styles :=
 resources.Get "css/styles.css" }} {{ $styles = $styles | resources.PostCSS
