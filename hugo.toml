@@ -4,6 +4,10 @@ title = 'Ed Roberts Rayne'
 sectionPagesMenu = 'main'
 enableEmoji = true
 
+[markup]
+[markup.highlight]
+style = 'catppuccin-mocha'
+
 [module]
   [module.hugoVersion]
     extended = false
