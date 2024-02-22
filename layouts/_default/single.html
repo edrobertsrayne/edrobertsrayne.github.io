@@ -1,6 +1,7 @@
 {{ define "title" }} {{ .Title }} &ndash; {{ .Site.Title }} {{ end }} {{ define
-"main" }}
-<section id="main" class="prose lg:prose-lg max-w-prose mx-6 md:mx-auto">
+"main" }} {{ $articleWidth := "max-w-prose mx-6 md:mx-auto" }} {{ if
+.Params.p5js }} {{ $articleWidth = "min-w-fit mx-auto" }} {{ end }}
+<section id="main" class="prose lg:prose-lg {{ $articleWidth }}">
   <nav aria-label="breadcrumb" class="text-sm breadcrumbs not-prose">
     <ul>
       {{ range .Ancestors.Reverse }}
@@ -11,8 +12,11 @@
       </li>
     </ul>
   </nav>
+
   <article class="my-2">
-    <h1>{{ .Title }}</h1>
+    <h1 class="not-prose text-5xl font-bold mb-4 text-primary-content">
+      {{ .Title }}
+    </h1>
     <aside id="meta" class="not-prose text-sm md:text-base">
       {{ if .Date }}
       <p>Posted: {{ .Date.Format "Monday January 2nd, 2006" }}</p>
@@ -26,7 +30,9 @@
       </p>
       {{ end }}
     </aside>
-    {{ .Content }}
+    {{ if .Params.p5js }}
+    <div class="mt-4" id="sketch-holder"><!-- Our sketch will go here! --></div>
+    {{ end }} {{ .Content }}
   </article>
 </section>
 {{ end }}
