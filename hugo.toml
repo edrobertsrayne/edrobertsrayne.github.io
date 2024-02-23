@@ -4,6 +4,11 @@ title = 'Ed Roberts Rayne'
 sectionPagesMenu = 'main'
 enableEmoji = true
 
+[taxonomies]
+category = 'categories'
+tag = 'tags'
+project = 'project'
+
 [markup]
 [markup.highlight]
 style = 'catppuccin-mocha'
