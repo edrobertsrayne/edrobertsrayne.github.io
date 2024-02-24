@@ -1,21 +1,10 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
-  <main>
-    <article>
-      <header>
-        <h1>{{ .Title }}</h1>
-      </header>
-      <!-- "{{ .Content }}" pulls from the Markdown content of the corresponding _index.md -->
-      {{ .Content }}
-    </article>
-    <ul>
-      <!-- Ranges through content/posts/*.md -->
-      {{ range .Pages }}
-        <li>
-          <a href="{{ .RelPermalink }}"
-            >{{ .Date.Format "2006-01-02" }} | {{ .LinkTitle }}</a
-          >
-        </li>
-      {{ end }}
-    </ul>
-  </main>
+  <section id="main" class="prose lg:prose-lg max-w-prose mx-6 md:mx-auto">
+    {{ partial "components/breadcrumbs.html" . }}
+    <h1>{{ .Title }}</h1>
+    {{ range .Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </section>
 {{ end }}

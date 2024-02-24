@@ -9,17 +9,7 @@
     {{ $articleWidth = "min-w-fit mx-auto" }}
   {{ end }}
   <section id="main" class="prose lg:prose-lg {{ $articleWidth }}">
-    <nav aria-label="breadcrumb" class="text-sm breadcrumbs not-prose">
-      <ul>
-        {{ range .Ancestors.Reverse }}
-          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-        {{ end }}
-        <li>
-          <a aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </li>
-      </ul>
-    </nav>
-
+    {{ partial "components/breadcrumbs.html" . }}
     <article class="my-2">
       <h1 class="not-prose text-5xl font-bold mb-4 text-base-content">
         {{ .Title }}
@@ -28,36 +18,9 @@
         {{ if .Date }}
           <p>Posted: {{ .Date.Format "Monday January 2nd, 2006" }}</p>
         {{ end }}
-        {{ with .GetTerms "categories" }}
-          <p>
-            Categories:
-            {{ range . }}
-              <a class="badge-primary badge" href="{{ .RelPermalink }}"
-                >{{ .LinkTitle }}</a
-              >
-            {{ end }}
-          </p>
-        {{ end }}
-        {{ with .GetTerms "tags" }}
-          <p>
-            Tags:
-            {{ range . }}
-              <a class="badge-secondary badge" href="{{ .RelPermalink }}"
-                >{{ .LinkTitle }}</a
-              >
-            {{ end }}
-          </p>
-        {{ end }}
-        {{ with .GetTerms "projects" }}
-          <p>
-            Project:
-            {{ range . }}
-              <a class="badge-accent badge" href="{{ .RelPermalink }}"
-                >{{ .LinkTitle }}</a
-              >
-            {{ end }}
-          </p>
-        {{ end }}
+        {{ partial "components/tags.html" . }}
+        {{ partial "components/categories.html" . }}
+        {{ partial "components/projects.html" . }}
       </aside>
       {{ if .Params.p5js }}
         <div class="mt-4" id="sketch-holder">

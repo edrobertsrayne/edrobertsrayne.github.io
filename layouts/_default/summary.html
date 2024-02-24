@@ -1,0 +1,9 @@
+<article>
+  <a href="{{ .RelPermalink }}"> <h2>{{ .Title }}</h2></a>
+  <div class="not-prose text-sm md:text-base">
+    <div>Posted: {{ .Date.Format "Wednesday January 2, 2006" }}</div>
+    <div>Reading time: {{ .ReadingTime }} minutes, {{ .WordCount }} words.</div>
+  </div>
+  <p>{{ .Summary }}</p>
+  {{ partial "components/tags.html" . }}
+</article>

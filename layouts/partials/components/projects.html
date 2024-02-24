@@ -1,0 +1,10 @@
+{{ with .GetTerms "projects" }}
+  <p class="not-prose">
+    Project:
+    {{ range . }}
+      <a class="badge-accent badge" href="{{ .RelPermalink }}"
+        >{{ .LinkTitle }}</a
+      >
+    {{ end }}
+  </p>
+{{ end }}

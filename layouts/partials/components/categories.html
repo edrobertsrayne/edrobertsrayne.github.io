@@ -1,0 +1,10 @@
+{{ with .GetTerms "categories" }}
+  <p class="not-prose">
+    Categories:
+    {{ range . }}
+      <a class="badge-primary badge" href="{{ .RelPermalink }}"
+        >{{ .LinkTitle }}</a
+      >
+    {{ end }}
+  </p>
+{{ end }}

@@ -15,6 +15,8 @@ Initially, I used his code
 the firing mechanism but with input from a Bluetooth gamepad using
 [Bluepad32](https://github.com/ricardoquesada/bluepad32).
 
+<!--more-->
+
 ```cpp
 void fire() { //if motor byte on, turn motor on and check for time it has been on
 

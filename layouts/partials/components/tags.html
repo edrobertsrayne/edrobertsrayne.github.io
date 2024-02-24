@@ -1,0 +1,10 @@
+{{ with .GetTerms "tags" }}
+  <p class="not-prose">
+    Tags:
+    {{ range . }}
+      <a class="badge-secondary badge" href="{{ .RelPermalink }}"
+        >{{ .LinkTitle }}</a
+      >
+    {{ end }}
+  </p>
+{{ end }}
