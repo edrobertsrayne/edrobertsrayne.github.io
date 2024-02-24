@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     {{ partial "head.html" . }}
@@ -6,8 +6,10 @@
   <body>
     {{ partial "header.html" . }}
 
-    <main>{{ block "main" . }} {{ end }}</main>
 
-    {{ partial "footer.html" . }} {{ partial "script.html" . }}
+    <main>{{ block "main" . }}{{ end }}</main>
+
+    {{ partial "footer.html" . }}
+    {{ partial "script.html" . }}
   </body>
 </html>
