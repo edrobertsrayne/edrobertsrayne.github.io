@@ -1,0 +1,7 @@
+<div class="py-6">
+  {{ range site.Taxonomies.projects.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="text-xl mx-4 btn btn-secondary"
+      >{{ .Page.Title }}</a
+    >
+  {{ end }}
+</div>
