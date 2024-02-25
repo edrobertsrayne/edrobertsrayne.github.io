@@ -11,7 +11,7 @@ project = 'projects'
 
 [markup]
 [markup.highlight]
-style = 'catppuccin-mocha'
+style = 'catppuccin-macchiato'
 
 [module]
   [module.hugoVersion]
