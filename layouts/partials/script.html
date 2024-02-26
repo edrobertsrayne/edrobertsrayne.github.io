@@ -15,3 +15,5 @@
 {{ end }}
 {{ $themeJs := resources.Get "js/theme.js" }}
 <script src="{{ $themeJs.Permalink }}"></script>
+{{ $fullscreenJs := resources.Get "js/fullscreen.js" }}
+<script src="{{ $fullscreenJs.Permalink }}"></script>
