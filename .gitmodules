@@ -1,0 +1,3 @@
+[submodule "static/starfield"]
+	path = static/starfield
+	url = https://github.com/edrobertsrayne/starfield.git
