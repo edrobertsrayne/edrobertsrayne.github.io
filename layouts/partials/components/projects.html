@@ -2,9 +2,9 @@
   <p class="not-prose">
     Project:
     {{ range . }}
-      <a class="badge-secondary badge" href="{{ .RelPermalink }}"
-        >{{ .LinkTitle }}</a
-      >
+      <a class="badge badge-secondary badge-outline" href="{{ .RelPermalink }}">
+        {{ .LinkTitle }}
+      </a>
     {{ end }}
   </p>
 {{ end }}
